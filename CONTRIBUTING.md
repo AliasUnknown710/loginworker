@@ -69,7 +69,11 @@ npm install
 
 1. Copy the example configuration:
 ```bash
-cp wrangler.toml.example wrangler.toml
+# Windows
+copy wrangler.jsonc.example wrangler.jsonc
+
+# macOS/Linux
+cp wrangler.jsonc.example wrangler.jsonc
 ```
 
 2. Set up your test backend or use a mock service

@@ -2,7 +2,7 @@ LoginWorker - Cloudflare Worker Authentication Template
 =========================================================
 
 Quick Start:
-1. Copy wrangler.toml.example to wrangler.toml
+1. Copy wrangler.jsonc.example to wrangler.jsonc
 2. Set BACKEND_AUTH_URL environment variable
 3. Run: npm install && npm run dev
 4. Open test.html to test locally
@@ -20,7 +20,7 @@ Files Overview:
 - loginworker.js: Business logic for authentication
 - test.html: Interactive testing interface
 - package.json: Dependencies and scripts
-- wrangler.toml.example: Configuration template
+- wrangler.jsonc.example: Configuration template
 - README.md: Comprehensive documentation
 
 Security Features:

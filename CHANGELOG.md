@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive error handling with security-focused error messages
 - Interactive test HTML page for local development
 - Complete documentation and setup instructions
-- Wrangler configuration template
+- Wrangler JSONC configuration template
 - MIT license
 
 ### Security

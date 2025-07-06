@@ -51,23 +51,28 @@ npx wrangler whoami
 #### Create Configuration File
 ```bash
 # Windows
-copy wrangler.toml.example wrangler.toml
+copy wrangler.jsonc.example wrangler.jsonc
 
 # macOS/Linux
-cp wrangler.toml.example wrangler.toml
+cp wrangler.jsonc.example wrangler.jsonc
 ```
 
-#### Edit wrangler.toml
-```toml
-name = "your-loginworker"
-main = "index.js"
-compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
+#### Edit wrangler.jsonc
+```json
+{
+  "name": "your-loginworker",
+  "main": "index.js",
+  "compatibility_date": "2024-01-01",
+  "compatibility_flags": ["nodejs_compat"],
 
-# Add your custom domain if needed
-# [[route]]
-# pattern = "auth.yourdomain.com/*"
-# zone_name = "yourdomain.com"
+  // Add your custom domain if needed
+  // "routes": [
+  //   {
+  //     "pattern": "auth.yourdomain.com/*",
+  //     "zone_name": "yourdomain.com"
+  //   }
+  // ]
+}
 ```
 
 ### 4. Environment Variables
@@ -213,11 +218,14 @@ curl -X POST https://your-loginworker.your-subdomain.workers.dev \
 3. Wait for DNS propagation
 
 #### Configure Worker Route
-```toml
-# In wrangler.toml
-[[route]]
-pattern = "auth.yourdomain.com/*"
-zone_name = "yourdomain.com"
+```json
+// In wrangler.jsonc
+"routes": [
+  {
+    "pattern": "auth.yourdomain.com/*",
+    "zone_name": "yourdomain.com"
+  }
+]
 ```
 
 #### Deploy with Custom Domain
@@ -230,11 +238,14 @@ npm run deploy
 ### Staging Environment
 
 #### Create Staging Configuration
-```toml
-# In wrangler.toml
-[env.staging]
-name = "loginworker-staging"
-# Add staging-specific variables
+```json
+// In wrangler.jsonc
+"env": {
+  "staging": {
+    "name": "loginworker-staging"
+    // Add staging-specific variables
+  }
+}
 ```
 
 #### Deploy to Staging
@@ -250,10 +261,13 @@ npx wrangler secret put BACKEND_AUTH_URL --env staging
 ### Production Environment
 
 #### Create Production Configuration
-```toml
-# In wrangler.toml
-[env.production]
-name = "loginworker-production"
+```json
+// In wrangler.jsonc
+"env": {
+  "production": {
+    "name": "loginworker-production"
+  }
+}
 ```
 
 #### Deploy to Production
@@ -273,12 +287,14 @@ Configure in Cloudflare Dashboard:
 ### Analytics
 
 #### Enable Analytics Engine
-```toml
-# In wrangler.toml
-[analytics_engine_datasets]
-[[analytics_engine_datasets.bindings]]
-name = "LOGIN_ANALYTICS"
-dataset = "login_metrics"
+```json
+// In wrangler.jsonc
+"analytics_engine_datasets": [
+  {
+    "binding": "LOGIN_ANALYTICS",
+    "dataset": "login_metrics"
+  }
+]
 ```
 
 #### Update Code to Log Events
@@ -299,11 +315,14 @@ npx wrangler kv:namespace create "LOGIN_CACHE"
 ```
 
 #### Add to Configuration
-```toml
-# In wrangler.toml
-[[kv_namespaces]]
-binding = "LOGIN_CACHE"
-id = "your-kv-namespace-id"
+```json
+// In wrangler.jsonc
+"kv_namespaces": [
+  {
+    "binding": "LOGIN_CACHE",
+    "id": "your-kv-namespace-id"
+  }
+]
 ```
 
 ## Troubleshooting

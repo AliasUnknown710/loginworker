@@ -32,10 +32,14 @@ npm install
 
 ### 2. Configure Environment
 
-Copy `wrangler.toml.example` to `wrangler.toml` and update with your settings:
+Copy `wrangler.jsonc.example` to `wrangler.jsonc` and update with your settings:
 
 ```bash
-cp wrangler.toml.example wrangler.toml
+# Windows
+copy wrangler.jsonc.example wrangler.jsonc
+
+# macOS/Linux
+cp wrangler.jsonc.example wrangler.jsonc
 ```
 
 ### 3. Set Environment Variables
