@@ -1,0 +1,41 @@
+{
+  "name": "loginworker",
+  "version": "1.0.0",
+  "description": "A Cloudflare Worker template for handling secure login authentication",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "wrangler dev --local",
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "authentication",
+    "login",
+    "security",
+    "template"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231121.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1",
+    "wrangler": "^3.22.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/loginworker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/loginworker/issues"
+  },
+  "homepage": "https://github.com/your-username/loginworker#readme"
+}

@@ -1,0 +1,48 @@
+name = "loginworker"
+main = "index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Environment variables (set these via Wrangler CLI or Cloudflare dashboard)
+# wrangler secret put BACKEND_AUTH_URL
+
+[vars]
+# Non-sensitive environment variables can be set here
+# ENVIRONMENT = "production"
+
+# Optional: Custom domain configuration
+# [[route]]
+# pattern = "auth.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+
+# Optional: Rate limiting (configure in Cloudflare dashboard)
+# This template supports rate limiting but requires dashboard configuration
+
+# Worker settings
+[build]
+command = ""
+
+[env.staging]
+name = "loginworker-staging"
+# vars for staging environment
+
+[env.production]
+name = "loginworker-production"
+# vars for production environment
+
+# Optional: Analytics and monitoring
+# [analytics_engine_datasets]
+# [[analytics_engine_datasets.bindings]]
+# name = "LOGIN_ANALYTICS"
+# dataset = "login_metrics"
+
+# Optional: Durable Objects (if you want to add session management)
+# [[durable_objects.bindings]]
+# name = "SESSIONS"
+# class_name = "SessionManager"
+
+# Optional: KV storage (for caching or temporary data)
+# [[kv_namespaces]]
+# binding = "LOGIN_CACHE"
+# id = "your-kv-namespace-id"
+# preview_id = "your-preview-kv-namespace-id"
