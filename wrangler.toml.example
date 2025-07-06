@@ -1,0 +1,20 @@
+name = "loginworker"
+main = "loginworker.js"
+compatibility_date = "2024-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Add your backend URL here or use wrangler secret put
+# BACKEND_URL = "https://your-backend-api.com/auth/login"
+
+# Optional: KV namespaces for rate limiting and logging
+# Uncomment and configure these if you want persistent rate limiting and logging
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "your-kv-namespace-id-for-rate-limiting"
+# preview_id = "your-preview-kv-namespace-id-for-rate-limiting"
+
+# [[kv_namespaces]]
+# binding = "LOGS_KV"
+# id = "your-kv-namespace-id-for-logs"
+# preview_id = "your-preview-kv-namespace-id-for-logs"
